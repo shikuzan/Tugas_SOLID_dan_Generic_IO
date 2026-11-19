@@ -11,7 +11,6 @@ public class WriteUserInputNew {
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         int count = 0;
 
-        // Scanner dan BufferedWriter otomatis ditutup oleh try-with-resources
         try (Scanner sc = new Scanner(System.in);
              BufferedWriter bw = Files.newBufferedWriter(Paths.get("user_input.txt"))) {
 
@@ -19,7 +18,7 @@ public class WriteUserInputNew {
             while (true) {
                 System.out.print("Enter text: ");
                 if (!sc.hasNextLine()) {
-                    break;                       // input habis (mis. Ctrl+D)
+                    break;                       
                 }
                 String text = sc.nextLine();
                 if (text.equalsIgnoreCase("exit")) {

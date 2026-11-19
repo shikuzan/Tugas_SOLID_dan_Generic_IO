@@ -1,7 +1,7 @@
 public enum AccountType {
     SAVINGS,
     CREDIT,
-    DEPOSIT;   // tipe baru
+    DEPOSIT;   
 
     @Override
     public String toString() {

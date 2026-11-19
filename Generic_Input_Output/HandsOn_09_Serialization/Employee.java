@@ -6,7 +6,7 @@ public class Employee implements Serializable {
     String name;
     int age;
     String department;
-    transient String password;   // transient: TIDAK ikut diserialisasi
+    transient String password;  
 
     Employee(String name, int age, String department, String password) {
         this.name = name;

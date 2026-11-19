@@ -8,7 +8,6 @@ import java.util.List;
 
 public class SerializeDemo {
 
-    /** Menulis satu objek Employee ke file biner. */
     public static void serialize(Employee e, String fileName) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
             oos.writeObject(e);
@@ -18,7 +17,6 @@ public class SerializeDemo {
         }
     }
 
-    /** Membaca kembali satu objek Employee dari file biner. */
     public static Employee deserialize(String fileName) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
             return (Employee) ois.readObject();
@@ -28,7 +26,6 @@ public class SerializeDemo {
         }
     }
 
-    /** Menulis banyak objek sekaligus (List juga Serializable). */
     public static void serializeAll(List<Employee> list, String fileName) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
             oos.writeObject(new ArrayList<>(list));

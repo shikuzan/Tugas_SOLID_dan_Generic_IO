@@ -6,7 +6,6 @@ import java.util.List;
 public class ProdukWriterNew {
     public static void main(String[] args) {
         try {
-            // ===== 1. Produk (dengan atribut stok) =====
             List<Produk<String, Double>> produkList = new ArrayList<>();
             produkList.add(new Produk<>("Laptop", 15000000.0, 12));
             produkList.add(new Produk<>("Mouse", 150000.0, 80));
@@ -17,7 +16,6 @@ public class ProdukWriterNew {
             produkStorage.save(produkList);
             System.out.println("Data produk berhasil disimpan menggunakan NIO.2");
 
-            // ===== 2. Membaca kembali dengan Files.readAllLines() =====
             System.out.println("\nIsi produk_output.txt (Files.readAllLines):");
             for (String line : produkStorage.readLines()) {
                 System.out.println("  " + line);
@@ -29,7 +27,6 @@ public class ProdukWriterNew {
                 System.out.printf("  %-10s %,15.0f %6d%n", p.getNama(), p.getHarga(), p.getStok());
             }
 
-            // ===== 3. Class yang sama dipakai untuk data lain =====
             FileStorage<Pelanggan> pelangganStorage = new FileStorage<>(Paths.get("pelanggan.txt"));
             pelangganStorage.save(List.of(
                     new Pelanggan("P001", "Andi", "andi@mail.com"),

@@ -10,7 +10,6 @@ public class Main {
             System.out.println(t + " -> " + t.getCode());
         }
 
-        // Contoh pemakaian: bunga 1 tahun untuk saldo Rp10.000.000
         double saldo = 10_000_000;
         AccountType tipe = AccountType.SAVINGS;
         double bunga = saldo * tipe.getInterestRate() / 100;

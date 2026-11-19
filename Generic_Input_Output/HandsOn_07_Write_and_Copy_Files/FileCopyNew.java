@@ -12,7 +12,6 @@ public class FileCopyNew {
     private static final Path LOG_FILE = Paths.get("log.txt");
     private static final DateTimeFormatter FMT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    /** Menulis satu baris log (dengan waktu) ke log.txt, mode append. */
     private static void log(String message) {
         String line = "[" + LocalDateTime.now().format(FMT) + "] " + message;
         System.out.println(line);
@@ -24,7 +23,6 @@ public class FileCopyNew {
         }
     }
 
-    /** Menyalin file, tetapi cek dulu apakah sumbernya ada. */
     private static void backup(Path source, Path backup) {
         if (!Files.exists(source)) {
             log("GAGAL: file sumber " + source + " tidak ditemukan, backup dibatalkan.");
@@ -53,10 +51,8 @@ public class FileCopyNew {
             log("GAGAL menulis laporan: " + e.getMessage());
         }
 
-        // Kasus 1: file sumber ada -> backup berhasil
         backup(source, backup);
 
-        // Kasus 2: file sumber tidak ada -> dicegah oleh Files.exists()
         backup(Paths.get("tidak_ada.txt"), Paths.get("backup/tidak_ada.txt"));
 
         System.out.println("\nSemua operasi tercatat di " + LOG_FILE.toAbsolutePath());

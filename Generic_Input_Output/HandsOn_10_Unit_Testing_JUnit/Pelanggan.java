@@ -1,4 +1,3 @@
-/** Jenis data lain yang bisa disimpan dengan FileStorage: Pelanggan. */
 public class Pelanggan implements CsvRecord {
     private final String id;
     private final String nama;

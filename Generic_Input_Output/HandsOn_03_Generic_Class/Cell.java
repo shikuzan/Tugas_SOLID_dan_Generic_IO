@@ -1,6 +1,3 @@
-/**
- * Generic class: T diganti dengan tipe nyata saat objek dibuat.
- */
 public class Cell<T> {
     private T data;
 
@@ -12,7 +9,6 @@ public class Cell<T> {
         return data;
     }
 
-    /** Menampilkan tipe data yang sedang disimpan. */
     public void displayType() {
         if (data == null) {
             System.out.println("Cell masih kosong (null)");

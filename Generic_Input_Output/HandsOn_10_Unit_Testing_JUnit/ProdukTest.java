@@ -10,9 +10,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Unit test (JUnit 4) untuk Produk dan FileStorage.
- */
 public class ProdukTest {
     private Path tempFile;
 

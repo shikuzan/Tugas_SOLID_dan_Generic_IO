@@ -1,7 +1,3 @@
-/**
- * Enum dengan konstruktor: setiap tipe akun punya kode internal
- * dan suku bunga (interestRate, dalam persen per tahun).
- */
 public enum AccountType {
     SAVINGS("SA", 2.5),
     CREDIT("CR", 18.0),
@@ -23,7 +19,6 @@ public enum AccountType {
         return interestRate;
     }
 
-    /** Menampilkan nama, kode, dan suku bunga. */
     public String info() {
         return String.format("%-8s | Kode: %s | Suku bunga: %.2f%%", name(), code, interestRate);
     }

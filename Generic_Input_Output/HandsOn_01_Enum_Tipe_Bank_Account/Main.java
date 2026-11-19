@@ -10,6 +10,5 @@ public class Main {
         Account akun = new Account(AccountType.DEPOSIT);
         System.out.println("Tipe akun: " + akun.getType());
 
-        // new Account("DEPOSITT");  // <- tidak bisa dikompilasi, salah ketik langsung ketahuan
     }
 }

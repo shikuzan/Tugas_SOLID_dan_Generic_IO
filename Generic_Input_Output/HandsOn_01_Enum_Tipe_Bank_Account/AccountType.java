@@ -1,7 +1,3 @@
-/**
- * Enum tipe akun bank.
- * Latihan: menambahkan DEPOSIT dan override toString() agar deskriptif.
- */
 public enum AccountType {
     SAVINGS,
     CREDIT,

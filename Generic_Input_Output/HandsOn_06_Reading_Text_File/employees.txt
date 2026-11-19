@@ -1,0 +1,5 @@
+E001,Andi Saputra,IT
+E002,Budi Santoso,Finance
+E003,Citra Lestari,HRD
+E004,Dewi Anggraini,Marketing
+E005,Eko Prasetyo,IT

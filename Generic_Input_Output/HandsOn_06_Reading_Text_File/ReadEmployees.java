@@ -1,0 +1,58 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ReadEmployees {
+
+    public static void main(String[] args) {
+        // Nama file bisa diganti lewat argumen, default employees.txt
+        String fileName = args.length > 0 ? args[0] : "employees.txt";
+        Path source = Paths.get(fileName);
+        Path target = Paths.get("copy_employees.txt");
+
+        // 1) Deteksi jika file tidak ditemukan
+        if (Files.notExists(source)) {
+            System.out.println("File tidak ditemukan: " + source.toAbsolutePath());
+            return;
+        }
+
+        // 2) Simpan hasil baca ke ArrayList<String>
+        List<String> employees = new ArrayList<>();
+        try (BufferedReader br = Files.newBufferedReader(source, StandardCharsets.UTF_8)) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (!line.isBlank()) {
+                    employees.add(line);
+                }
+            }
+        } catch (NoSuchFileException e) {
+            // Jaga-jaga jika file terhapus di antara pengecekan dan pembacaan
+            System.out.println("File tidak ditemukan: " + e.getFile());
+            return;
+        } catch (IOException e) {
+            System.out.println("Gagal membaca file: " + e.getMessage());
+            return;
+        }
+
+        System.out.println("Isi " + fileName + " (" + employees.size() + " baris):");
+        employees.forEach(System.out::println);
+
+        // 3) Tulis ke file baru copy_employees.txt
+        try (BufferedWriter bw = Files.newBufferedWriter(target, StandardCharsets.UTF_8)) {
+            for (String emp : employees) {
+                bw.write(emp);
+                bw.newLine();
+            }
+            System.out.println("\nData berhasil ditulis ke " + target.getFileName());
+        } catch (IOException e) {
+            System.out.println("Gagal menulis file: " + e.getMessage());
+        }
+    }
+}

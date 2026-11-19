@@ -1,4 +1,3 @@
-/** Mobil listrik: punya motor penggerak dan baterai, TIDAK punya tangki bahan bakar. */
 public class MobilListrik extends Vehicle implements EngineVehicle, BatteryPowered {
     public MobilListrik(String nama) {
         super(nama);

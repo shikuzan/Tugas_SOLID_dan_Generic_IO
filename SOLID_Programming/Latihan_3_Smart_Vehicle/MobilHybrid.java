@@ -1,8 +1,3 @@
-/**
- * Jenis kendaraan BARU (contoh OCP).
- * Cukup membuat kelas baru yang menggabungkan interface yang relevan;
- * tidak ada kelas lama yang diubah.
- */
 public class MobilHybrid extends Vehicle implements EngineVehicle, FuelPowered, BatteryPowered {
     public MobilHybrid(String nama) {
         super(nama);

@@ -12,7 +12,6 @@ public class Main {
         for (EngineVehicle v : bermesin) {
             v.startEngine();
         }
-        // sepeda.startEngine();  // <- TIDAK BISA DIKOMPILASI: Sepeda tidak punya mesin
 
         System.out.println("\n=== Pengisian energi ===");
         SPBU spbu = new SPBU();

@@ -1,4 +1,3 @@
-/** Mobil bensin: punya mesin dan tangki bahan bakar, TIDAK punya baterai penggerak. */
 public class MobilBensin extends Vehicle implements EngineVehicle, FuelPowered {
     public MobilBensin(String nama) {
         super(nama);

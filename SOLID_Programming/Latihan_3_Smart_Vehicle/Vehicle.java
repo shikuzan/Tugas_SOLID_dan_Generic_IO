@@ -9,6 +9,5 @@ public abstract class Vehicle {
         return nama;
     }
 
-    /** Semua kendaraan bisa bergerak, dengan caranya masing-masing (polimorfisme). */
     public abstract void jalan();
 }

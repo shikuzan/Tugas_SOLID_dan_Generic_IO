@@ -1,7 +1,3 @@
-/**
- * SRP: satu-satunya alasan kelas ini berubah adalah jika
- * RUMUS perhitungan nilai akhir berubah.
- */
 public class GradeCalculator {
     private static final double BOBOT_TUGAS = 0.3;
     private static final double BOBOT_UTS = 0.3;

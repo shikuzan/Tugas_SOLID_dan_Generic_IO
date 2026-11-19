@@ -1,7 +1,3 @@
-/**
- * Koordinator alur penilaian. Kelas ini tidak menghitung, mencetak,
- * atau menyimpan sendiri; ia hanya mendelegasikan ke kelas yang bertanggung jawab.
- */
 public class GradingService {
     private final GradeCalculator calculator;
     private final ReportPrinter printer;
